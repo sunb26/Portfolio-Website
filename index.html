@@ -37,9 +37,54 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
+                    <p>4th Year Mechatronics and Biomedical Engineering Student 
+                        who just codes all the time. 
+                        Check out my Devpost and Github for demos!
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Coding</span><br>Python, Golang, C/C++</li>
+                            <li><span>Climbing</span><br>V4/V5, 5.10</li>
+                            <li><span>Cooking</span><br>Cooking like a chef I'm a 5-star Michelin</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Parametric</span><br>Web3, GPT, grpc microservice setup</li>
+                            <li><span>Unity Technologies</span><br>C#, Unity Engine, Convolutional Neural Networks</li>
+                            <li><span>Inviand/Magarvey Labs</span><br>Data Engineering, Graph Learning, RESTful services</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>McMaster University</span><br>Mechatronics and Biomedical Engineering</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+           
+        }
+    </script>
 </body>
 </html>
